@@ -74,11 +74,11 @@ Things To-Do
 
 **Known History**
 
-| v0.1.0b - Moved the saving of PDF character sheets to the program folder.
-|			Added ON/OFF toggle for Encumbrance.
-|			Added psionics check for future knowledge.
-
-v0.0.2b - Initial release.
+	| v0.1.0b - Moved the saving of PDF character sheets to the program folder.
+	|			Added ON/OFF toggle for Encumbrance.
+	|			Added psionics check for future knowledge.
+	|
+	| v0.0.2b - Initial release.
 
 
 Part of the Escape from Planet Matriarchy! RPG, written by R. Joshua Holland.
