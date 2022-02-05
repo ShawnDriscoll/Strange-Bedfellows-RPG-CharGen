@@ -10,7 +10,7 @@
 Notes
 -----
 
-**Strange Bedfellows RPG Character Generator** is being developed using Python 3.9.7 and PyQt5.
+**Strange Bedfellows RPG Character Generator** is being developed using Python 3.9.10 and PyQt5.
 
 .. figure:: images/sb_chargen.png
 
@@ -22,10 +22,10 @@ Requirements
 
    It might not work in OSX or Linux.
 
-* **Python 3.9.7**
+* **Python 3.9.10**
    
    This code was written using the C implementation of Python
-   version 3.9.7. Also known as CPython.
+   version 3.9.10. Also known as CPython.
    
 * **PyQt5 5.15.4**
 
@@ -74,6 +74,9 @@ Things To-Do
 
 **Known History**
 
+	| v0.1.1b - Updated to Python 3.9.10.
+	|			Generates only female characters now. No men.
+	|
 	| v0.1.0b - Moved the saving of PDF character sheets to the program folder.
 	|			Added ON/OFF toggle for Encumbrance.
 	|			Added psionics check for future knowledge.

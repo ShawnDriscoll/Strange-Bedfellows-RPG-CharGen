@@ -4,7 +4,7 @@
 ############################################
 
 """
-SB Chargen 0.1.0 Beta
+SB Chargen 0.1.1 Beta
 -----------------------------------------------------------------------
 
 This program generates characters for the Strange Bedfellows episode of the Escape From Planet Matriarchy! RPG.
@@ -26,8 +26,8 @@ import json
 from fpdf import FPDF
 
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
-__app__ = 'SB CharGen 0.1.0 (Beta)'
-__version__ = '0.1.0b'
+__app__ = 'SB CharGen 0.1.1 (Beta)'
+__version__ = '0.1.1b'
 __expired_tag__ = False
 
 class aboutDialog(QDialog, Ui_aboutDialog):
@@ -157,6 +157,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.encumbered_checkBox.setDisabled(True)
         self.charnameEdit.setText('Sample Char')
+        self.genderEdit.setText('Female')
         self.rewardDisplay.setText('None')
         self.encumbered_flag = False
         self.encumbered_checkBox.toggled.connect(self.encumbered_checkBox_changed)
@@ -272,7 +273,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.genderEdit.setDisabled(True)
             self.deptBox.setDisabled(True)
             self.rankDisplay.setDisabled(True)
-            self.levelBox.setDisabled(True)
             self.xpEdit.setDisabled(True)
             self.armorDisplay.setDisabled(True)
             self.weaponDisplay.setDisabled(True)
@@ -529,7 +529,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.charnameEdit.setDisabled(True)
         self.ageEdit.setText('')
         self.ageEdit.setDisabled(True)
-        self.genderEdit.setText('')
+        self.genderEdit.setText('Female')
         self.genderEdit.setDisabled(True)
         self.rewardDisplay.setText('None')
         self.healthStatus.setText('')
@@ -768,7 +768,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.encumbered_checkBox.setDisabled(False)
                     self.charnameEdit.setDisabled(False)
                     self.ageEdit.setDisabled(False)
-                    self.genderEdit.setDisabled(False)
+                    #self.genderEdit.setDisabled(False)
                     self.rewardDisplay.setText(str(self.agilitySkill.value() + self.beautySkill.value() + self.strengthSkill.value() +
                             self.knowledgeSkill.value() + self.perceptionSkill.value() + self.technologySkill.value() +
                             self.charismaSkill.value() + self.empathySkill.value() + self.focusSkill.value() +
@@ -841,7 +841,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.encumbered_checkBox.setDisabled(False)
                     self.charnameEdit.setDisabled(False)
                     self.ageEdit.setDisabled(False)
-                    self.genderEdit.setDisabled(False)
+                    #self.genderEdit.setDisabled(False)
                     self.rewardDisplay.setText(str(self.agilitySkill.value() + self.beautySkill.value() + self.strengthSkill.value() +
                             self.knowledgeSkill.value() + self.perceptionSkill.value() + self.technologySkill.value() +
                             self.charismaSkill.value() + self.empathySkill.value() + self.focusSkill.value() +
@@ -917,7 +917,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.encumbered_checkBox.setDisabled(False)
                     self.charnameEdit.setDisabled(False)
                     self.ageEdit.setDisabled(False)
-                    self.genderEdit.setDisabled(False)
+                    #self.genderEdit.setDisabled(False)
                     self.rewardDisplay.setText(str(self.agilitySkill.value() + self.beautySkill.value() + self.strengthSkill.value() +
                             self.knowledgeSkill.value() + self.perceptionSkill.value() + self.technologySkill.value() +
                             self.charismaSkill.value() + self.empathySkill.value() + self.focusSkill.value() +
@@ -990,7 +990,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.encumbered_checkBox.setDisabled(False)
                     self.charnameEdit.setDisabled(False)
                     self.ageEdit.setDisabled(False)
-                    self.genderEdit.setDisabled(False)
+                    #self.genderEdit.setDisabled(False)
                     self.rewardDisplay.setText(str(self.agilitySkill.value() + self.beautySkill.value() + self.strengthSkill.value() +
                             self.knowledgeSkill.value() + self.perceptionSkill.value() + self.technologySkill.value() +
                             self.charismaSkill.value() + self.empathySkill.value() + self.focusSkill.value() +
@@ -1063,7 +1063,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.encumbered_checkBox.setDisabled(False)
                     self.charnameEdit.setDisabled(False)
                     self.ageEdit.setDisabled(False)
-                    self.genderEdit.setDisabled(False)
+                    #self.genderEdit.setDisabled(False)
                     self.rewardDisplay.setText(str(self.agilitySkill.value() + self.beautySkill.value() + self.strengthSkill.value() +
                             self.knowledgeSkill.value() + self.perceptionSkill.value() + self.technologySkill.value() +
                             self.charismaSkill.value() + self.empathySkill.value() + self.focusSkill.value() +
@@ -1136,7 +1136,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.encumbered_checkBox.setDisabled(False)
                     self.charnameEdit.setDisabled(False)
                     self.ageEdit.setDisabled(False)
-                    self.genderEdit.setDisabled(False)
+                    #self.genderEdit.setDisabled(False)
                     self.rewardDisplay.setText(str(self.agilitySkill.value() + self.beautySkill.value() + self.strengthSkill.value() +
                             self.knowledgeSkill.value() + self.perceptionSkill.value() + self.technologySkill.value() +
                             self.charismaSkill.value() + self.empathySkill.value() + self.focusSkill.value() +
@@ -1209,7 +1209,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.encumbered_checkBox.setDisabled(False)
                     self.charnameEdit.setDisabled(False)
                     self.ageEdit.setDisabled(False)
-                    self.genderEdit.setDisabled(False)
+                    #self.genderEdit.setDisabled(False)
                     self.rewardDisplay.setText(str(self.agilitySkill.value() + self.beautySkill.value() + self.strengthSkill.value() +
                             self.knowledgeSkill.value() + self.perceptionSkill.value() + self.technologySkill.value() +
                             self.charismaSkill.value() + self.empathySkill.value() + self.focusSkill.value() +
@@ -1282,7 +1282,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.encumbered_checkBox.setDisabled(False)
                     self.charnameEdit.setDisabled(False)
                     self.ageEdit.setDisabled(False)
-                    self.genderEdit.setDisabled(False)
+                    #self.genderEdit.setDisabled(False)
                     self.rewardDisplay.setText(str(self.agilitySkill.value() + self.beautySkill.value() + self.strengthSkill.value() +
                             self.knowledgeSkill.value() + self.perceptionSkill.value() + self.technologySkill.value() +
                             self.charismaSkill.value() + self.empathySkill.value() + self.focusSkill.value() +
@@ -1355,7 +1355,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.encumbered_checkBox.setDisabled(False)
                     self.charnameEdit.setDisabled(False)
                     self.ageEdit.setDisabled(False)
-                    self.genderEdit.setDisabled(False)
+                    #self.genderEdit.setDisabled(False)
                     self.rewardDisplay.setText(str(self.agilitySkill.value() + self.beautySkill.value() + self.strengthSkill.value() +
                             self.knowledgeSkill.value() + self.perceptionSkill.value() + self.technologySkill.value() +
                             self.charismaSkill.value() + self.empathySkill.value() + self.focusSkill.value() +
@@ -1428,7 +1428,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.encumbered_checkBox.setDisabled(False)
                     self.charnameEdit.setDisabled(False)
                     self.ageEdit.setDisabled(False)
-                    self.genderEdit.setDisabled(False)
+                    #self.genderEdit.setDisabled(False)
                     self.rewardDisplay.setText(str(self.agilitySkill.value() + self.beautySkill.value() + self.strengthSkill.value() +
                             self.knowledgeSkill.value() + self.perceptionSkill.value() + self.technologySkill.value() +
                             self.charismaSkill.value() + self.empathySkill.value() + self.focusSkill.value() +
@@ -1501,7 +1501,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.encumbered_checkBox.setDisabled(False)
                     self.charnameEdit.setDisabled(False)
                     self.ageEdit.setDisabled(False)
-                    self.genderEdit.setDisabled(False)
+                    #self.genderEdit.setDisabled(False)
                     self.rewardDisplay.setText(str(self.agilitySkill.value() + self.beautySkill.value() + self.strengthSkill.value() +
                             self.knowledgeSkill.value() + self.perceptionSkill.value() + self.technologySkill.value() +
                             self.charismaSkill.value() + self.empathySkill.value() + self.focusSkill.value() +
@@ -1574,7 +1574,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.encumbered_checkBox.setDisabled(False)
                     self.charnameEdit.setDisabled(False)
                     self.ageEdit.setDisabled(False)
-                    self.genderEdit.setDisabled(False)
+                    #self.genderEdit.setDisabled(False)
                     self.rewardDisplay.setText(str(self.agilitySkill.value() + self.beautySkill.value() + self.strengthSkill.value() +
                             self.knowledgeSkill.value() + self.perceptionSkill.value() + self.technologySkill.value() +
                             self.charismaSkill.value() + self.empathySkill.value() + self.focusSkill.value() +
@@ -1647,7 +1647,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.encumbered_checkBox.setDisabled(False)
                     self.charnameEdit.setDisabled(False)
                     self.ageEdit.setDisabled(False)
-                    self.genderEdit.setDisabled(False)
+                    #self.genderEdit.setDisabled(False)
                     self.rewardDisplay.setText(str(self.agilitySkill.value() + self.beautySkill.value() + self.strengthSkill.value() +
                             self.knowledgeSkill.value() + self.perceptionSkill.value() + self.technologySkill.value() +
                             self.charismaSkill.value() + self.empathySkill.value() + self.focusSkill.value() +
@@ -1720,7 +1720,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.encumbered_checkBox.setDisabled(False)
                     self.charnameEdit.setDisabled(False)
                     self.ageEdit.setDisabled(False)
-                    self.genderEdit.setDisabled(False)
+                    #self.genderEdit.setDisabled(False)
                     self.rewardDisplay.setText(str(self.agilitySkill.value() + self.beautySkill.value() + self.strengthSkill.value() +
                             self.knowledgeSkill.value() + self.perceptionSkill.value() + self.technologySkill.value() +
                             self.charismaSkill.value() + self.empathySkill.value() + self.focusSkill.value() +
@@ -1793,7 +1793,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.encumbered_checkBox.setDisabled(False)
                     self.charnameEdit.setDisabled(False)
                     self.ageEdit.setDisabled(False)
-                    self.genderEdit.setDisabled(False)
+                    #self.genderEdit.setDisabled(False)
                     self.rewardDisplay.setText(str(self.agilitySkill.value() + self.beautySkill.value() + self.strengthSkill.value() +
                             self.knowledgeSkill.value() + self.perceptionSkill.value() + self.technologySkill.value() +
                             self.charismaSkill.value() + self.empathySkill.value() + self.focusSkill.value() +
@@ -2023,7 +2023,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.ageEdit.setText(self.char_data['Age'])
                 self.ageEdit.setDisabled(False)
                 self.genderEdit.setText(self.char_data['Gender'])
-                self.genderEdit.setDisabled(False)
+                #self.genderEdit.setDisabled(False)
                 self.dept_chosen = self.char_data['Dept']
                 self.deptBox.setCurrentIndex(self.dept_choice.index(self.dept_chosen))
                 self.rankDisplay.setText(self.char_data['Rank'])
