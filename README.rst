@@ -36,10 +36,7 @@ Requirements
    Fpdf2 is needed for printing the character sheets.
    
 
-Warning
--------
-
-This code will not work with **Python 2.7-**.
+.. warning:: This code will not work with **Python 2.7-**.
 
 
 Not Using Python?
