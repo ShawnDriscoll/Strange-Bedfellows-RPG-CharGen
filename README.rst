@@ -36,7 +36,10 @@ Requirements
    Fpdf2 is needed for printing the character sheets.
    
 
-.. warning:: This code will not work with **Python 2.7-**.
+Warning
+-------
+
+This code will not work with **Python 2.7-**.
 
 
 Not Using Python?
@@ -71,14 +74,23 @@ Things To-Do
 
 **Known History**
 
-	| v0.1.1b - Updated to Python 3.9.10.
-	|			Generates only female characters now. No men.
-	|
-	| v0.1.0b - Moved the saving of PDF character sheets to the program folder.
-	|			Added ON/OFF toggle for Encumbrance.
-	|			Added psionics check for future knowledge.
-	|
-	| v0.0.2b - Initial release.
+* v0.1.1b
+
+  #. Updated to Python 3.9.10.
+
+  #. Generates only female characters now. No men.
+
+* v0.1.0b
+
+  #. Moved the saving of PDF character sheets to the program folder.
+
+  #. Added ON/OFF toggle for Encumbrance.
+  
+  #. Added psionics check for future knowledge.
+
+* v0.0.2b
+
+  #. Initial release.
 
 
 Part of the Escape from Planet Matriarchy! RPG, written by R. Joshua Holland.
