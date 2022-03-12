@@ -59,13 +59,13 @@ at this time.
 Things To-Do
 ------------
 
-| Fix psionic-checking when leveling up character.
 | Continue unifying the skills across all TPS genres.
 | Instruction manual.
 | Cheat codes.
-| Add/borrow psionics check for future use from We Want Soviet Men!
 |ss|
 
+| Fix psionic-checking when leveling up character.
+| Add/borrow psionics check for future use from We Want Soviet Men!
 | Move PDF character sheets closer to program folder.
 | Add Encumbrance rules from Rocket Cadets in the 11th Dimension!
 | Start on a To-Do.
@@ -73,6 +73,12 @@ Things To-Do
 |se|
 
 **Known History**
+
+* v0.1.2b
+
+  Added checks when generating characters with psionic skills.
+  
+  The TPS DieRoller now recognizes psionic characters from this generator.
 
 * v0.1.1b
 
