@@ -4,7 +4,7 @@
 .. figure:: images/sb.png
 
 
-**Strange Bedfellows RPG Character Generator** is a Windows program for creating characters using the Total Party Skills system.
+**Strange Bedfellows RPG Character Generator** is a Windows program for creating characters using the Total Party Skills system. It is based off of Episode Four of Escape from Planet Matriarchy!
 
 
 Notes

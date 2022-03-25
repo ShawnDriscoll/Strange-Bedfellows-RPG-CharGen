@@ -591,9 +591,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.clairvoyanceSkill.setDisabled(False)
                     self.psychokinesisSkill.setDisabled(False)
                     self.telepathySkill.setDisabled(False)
-                # self.clairvoyanceSkill.setDisabled(False)
-                # self.psychokinesisSkill.setDisabled(False)
-                # self.telepathySkill.setDisabled(False)
         else:
             self.agilitySkill.setDisabled(True)
             self.beautySkill.setDisabled(True)
@@ -651,9 +648,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.clairvoyanceSkill.setDisabled(False)
                     self.psychokinesisSkill.setDisabled(False)
                     self.telepathySkill.setDisabled(False)
-                # self.clairvoyanceSkill.setDisabled(False)
-                # self.psychokinesisSkill.setDisabled(False)
-                # self.telepathySkill.setDisabled(False)
         else:
             self.agilitySkill.setDisabled(True)
             self.beautySkill.setDisabled(True)
@@ -711,9 +705,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.clairvoyanceSkill.setDisabled(False)
                     self.psychokinesisSkill.setDisabled(False)
                     self.telepathySkill.setDisabled(False)
-                # self.clairvoyanceSkill.setDisabled(False)
-                # self.psychokinesisSkill.setDisabled(False)
-                # self.telepathySkill.setDisabled(False)
         else:
             self.agilitySkill.setDisabled(True)
             self.beautySkill.setDisabled(True)
@@ -1937,9 +1928,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.clairvoyanceSkill.setDisabled(False)
                     self.psychokinesisSkill.setDisabled(False)
                     self.telepathySkill.setDisabled(False)
-                # self.clairvoyanceSkill.setDisabled(False)
-                # self.psychokinesisSkill.setDisabled(False)
-                # self.telepathySkill.setDisabled(False)
                 self.xpEdit.setDisabled(True)
                 self.saveButton.setDisabled(True)
                 self.actionSave.setDisabled(True)
@@ -1989,9 +1977,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.clairvoyanceSkill.setDisabled(False)
                     self.psychokinesisSkill.setDisabled(False)
                     self.telepathySkill.setDisabled(False)
-                # self.clairvoyanceSkill.setDisabled(False)
-                # self.psychokinesisSkill.setDisabled(False)
-                # self.telepathySkill.setDisabled(False)
                 self.xpEdit.setDisabled(True)
                 self.saveButton.setDisabled(True)
                 self.actionSave.setDisabled(True)
@@ -2186,10 +2171,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.char_data['Age'] = self.ageEdit.text()
             self.char_data['Gender'] = self.genderEdit.text()
             self.char_data['Reward'] = self.rewardDisplay.text()
-            # if self.clairvoyanceSkill.value() > 0 or self.psychokinesisSkill.value() > 0 or self.telepathySkill.value() > 0:
-            #     self.is_psionic = True
-            # else:
-            #     self.is_psionic = False
             self.char_data['Is_Psionic'] = self.is_psionic
             self.char_data['Encumbered'] = self.encumbered_flag
             self.char_data['BODY'] = self.bodyScore.value()
@@ -2475,7 +2456,7 @@ if __name__ == '__main__':
 
     log.info(__app__ + ' started, and running...')
 
-    if trange[0] > 2022 or trange[1] > 4:
+    if trange[0] > 2022 or trange[1] > 5:
         __expired_tag__ = True
         __app__ += ' [EXPIRED]'
         
