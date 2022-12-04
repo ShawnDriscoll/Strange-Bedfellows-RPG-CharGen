@@ -4,13 +4,12 @@
 ############################################
 
 """
-SB Chargen 0.1.2 Beta
+SB Chargen 0.1.3 Beta
 -----------------------------------------------------------------------
 
 This program generates characters for the Strange Bedfellows episode of the Escape From Planet Matriarchy! RPG.
 """
 
-from re import T
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
@@ -26,8 +25,8 @@ import json
 from fpdf import FPDF
 
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
-__app__ = 'SB CharGen 0.1.2 (Beta)'
-__version__ = '0.1.2b'
+__app__ = 'SB CharGen 0.1.3 (Beta)'
+__version__ = '0.1.3b'
 __expired_tag__ = False
 
 class aboutDialog(QDialog, Ui_aboutDialog):
@@ -2239,77 +2238,133 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         pdf = FPDF(orientation='P', unit='in', format='Letter')
         pdf.add_page()
         pdf.image(name=CURRENT_DIR + '\\sb_logo.png')
-        pdf.add_font(family='Comic Sans MS', style='', fname=r'C:\Windows\Fonts\comic.ttf', uni='True')
-        pdf.add_font(family='Comic Sans MS', style='B', fname=r'C:\Windows\Fonts\comicbd.ttf', uni='True')
+        pdf.add_font(family='Comic Sans MS', style='', fname=r'C:\Windows\Fonts\comic.ttf')
+        pdf.add_font(family='Comic Sans MS', style='B', fname=r'C:\Windows\Fonts\comicbd.ttf')
         pdf.set_font('Comic Sans MS', 'B', 20)
-        pdf.cell(txt=' ', ln=1)
-        pdf.cell(txt=self.game_name, ln=1)
-        pdf.cell(txt='CHARACTER DIARY', ln=1)
+        pdf.cell(txt=' ')
+        pdf.ln()
+        pdf.cell(txt=self.game_name)
+        pdf.ln()
+        pdf.cell(txt='CHARACTER DIARY')
+        pdf.ln()
         pdf.set_font('Comic Sans MS', '', 16)
-        pdf.cell(txt=' ', ln=1)
-        pdf.cell(txt='Name: ' + self.charnameEdit.text(), ln=1)
-        pdf.cell(txt='Age: ' + self.ageEdit.text() + '        Gender: ' + self.genderEdit.text(), ln=1)
-        pdf.cell(txt='Caste: ' + self.dept_chosen, ln=1)
-        pdf.cell(txt='Rank: ' + self.rankDisplay.text(), ln=1)
-        pdf.cell(txt='Reward: ' + str(self.rewardDisplay.text()) + '        Level: ' + str(self.char_level) + '        XP: ' + str(self.char_xp), ln=1)
-        pdf.cell(txt=' ', ln=1)
-        pdf.cell(txt='     Limits', ln=1)
-        pdf.cell(txt='ENCUMBRANCE: ' + str(1 + self.bodyScore.value() + self.strengthSkill.value()), ln=1)
-        pdf.cell(txt='MOVE/COMBAT: ' + str(1 + self.bodyScore.value() + self.agilitySkill.value()), ln=1)
-        pdf.cell(txt='MOVE/TRAVEL: ' + str(1 + self.bodyScore.value() + self.strengthSkill.value()), ln=1)
-        pdf.cell(txt=' ', ln=1)
-        pdf.cell(txt='     Attributes', ln=1)
+        pdf.cell(txt=' ')
+        pdf.ln()
+        pdf.cell(txt='Name: ' + self.charnameEdit.text())
+        pdf.ln()
+        pdf.cell(txt='Age: ' + self.ageEdit.text() + '        Gender: ' + self.genderEdit.text())
+        pdf.ln()
+        pdf.cell(txt='Caste: ' + self.dept_chosen)
+        pdf.ln()
+        pdf.cell(txt='Rank: ' + self.rankDisplay.text())
+        pdf.ln()
+        pdf.cell(txt='Reward: ' + str(self.rewardDisplay.text()) + '        Level: ' + str(self.char_level) + '        XP: ' + str(self.char_xp))
+        pdf.ln()
+        pdf.cell(txt=' ')
+        pdf.ln()
+        pdf.cell(txt='     Limits')
+        pdf.ln()
+        pdf.cell(txt='ENCUMBRANCE: ' + str(1 + self.bodyScore.value() + self.strengthSkill.value()))
+        pdf.ln()
+        pdf.cell(txt='MOVE/COMBAT: ' + str(1 + self.bodyScore.value() + self.agilitySkill.value()))
+        pdf.ln()
+        pdf.cell(txt='MOVE/TRAVEL: ' + str(1 + self.bodyScore.value() + self.strengthSkill.value()))
+        pdf.ln()
+        pdf.cell(txt=' ')
+        pdf.ln()
+        pdf.cell(txt='     Attributes')
+        pdf.ln()
         pdf.set_font('Comic Sans MS', '', 18)
-        pdf.cell(txt='BODY: ' + str(self.bodyScore.value()), ln=1)
-        pdf.cell(txt='MIND: ' + str(self.mindScore.value()), ln=1)
-        pdf.cell(txt='SPIRIT: ' + str(self.spiritScore.value()), ln=1)
-        pdf.cell(txt='     Status', ln=1)
+        pdf.cell(txt='BODY: ' + str(self.bodyScore.value()))
+        pdf.ln()
+        pdf.cell(txt='MIND: ' + str(self.mindScore.value()))
+        pdf.ln()
+        pdf.cell(txt='SPIRIT: ' + str(self.spiritScore.value()))
+        pdf.ln()
+        pdf.cell(txt='     Status')
+        pdf.ln()
         pdf.set_font('Comic Sans MS', '', 18)
-        pdf.cell(txt='HEALTH: ' + str(self.healthDisplay.text()), ln=1)
-        pdf.cell(txt='SANITY: ' + str(self.sanityDisplay.text()), ln=1)
-        pdf.cell(txt='MORALE: ' + str(self.moraleDisplay.text()), ln=1)
+        pdf.cell(txt='HEALTH: ' + str(self.healthDisplay.text()))
+        pdf.ln()
+        pdf.cell(txt='SANITY: ' + str(self.sanityDisplay.text()))
+        pdf.ln()
+        pdf.cell(txt='MORALE: ' + str(self.moraleDisplay.text()))
+        pdf.ln()
         pdf.set_font('Comic Sans MS', '', 16)
-        pdf.cell(txt=' ', ln=1)
-        pdf.cell(txt='Body Skills', ln=1)
-        pdf.cell(txt='   Agility: ' + str(self.agilitySkill.value()), ln=1)
-        pdf.cell(txt='   Beauty: ' + str(self.beautySkill.value()), ln=1)
-        pdf.cell(txt='   Strength: ' + str(self.strengthSkill.value()), ln=1)
-        pdf.cell(txt='Mind Skills', ln=1)
-        pdf.cell(txt='   Knowledge: ' + str(self.knowledgeSkill.value()), ln=1)
-        pdf.cell(txt='   Perception: ' + str(self.perceptionSkill.value()), ln=1)
-        pdf.cell(txt='   Technology: ' + str(self.technologySkill.value()), ln=1)
-        pdf.cell(txt='Spirit Skills', ln=1)
-        pdf.cell(txt='   Charisma: ' + str(self.charismaSkill.value()), ln=1)
-        pdf.cell(txt='   Empathy: ' + str(self.empathySkill.value()), ln=1)
-        pdf.cell(txt='   Focus: ' + str(self.focusSkill.value()), ln=1)
+        pdf.cell(txt=' ')
+        pdf.ln()
+        pdf.cell(txt='Body Skills')
+        pdf.ln()
+        pdf.cell(txt='   Agility: ' + str(self.agilitySkill.value()))
+        pdf.ln()
+        pdf.cell(txt='   Beauty: ' + str(self.beautySkill.value()))
+        pdf.ln()
+        pdf.cell(txt='   Strength: ' + str(self.strengthSkill.value()))
+        pdf.ln()
+        pdf.cell(txt='Mind Skills')
+        pdf.ln()
+        pdf.cell(txt='   Knowledge: ' + str(self.knowledgeSkill.value()))
+        pdf.ln()
+        pdf.cell(txt='   Perception: ' + str(self.perceptionSkill.value()))
+        pdf.ln()
+        pdf.cell(txt='   Technology: ' + str(self.technologySkill.value()))
+        pdf.ln()
+        pdf.cell(txt='Spirit Skills')
+        pdf.ln()
+        pdf.cell(txt='   Charisma: ' + str(self.charismaSkill.value()))
+        pdf.ln()
+        pdf.cell(txt='   Empathy: ' + str(self.empathySkill.value()))
+        pdf.ln()
+        pdf.cell(txt='   Focus: ' + str(self.focusSkill.value()))
+        pdf.ln()
         pdf.add_page()
         pdf.set_font('Comic Sans MS', '', 10)
-        pdf.cell(txt=self.game_name + '   ...continuing with character: ' + self.charnameEdit.text(), ln=1)
+        pdf.cell(txt=self.game_name + '   ...continuing with character: ' + self.charnameEdit.text())
+        pdf.ln()
         pdf.set_font('Comic Sans MS', '', 16)
-        pdf.cell(txt=' ', ln=1)
-        pdf.cell(txt=' ', ln=1)
-        pdf.cell(txt='Combat Skills', ln=1)
-        pdf.cell(txt='   Boxing: ' + str(self.boxingSkill.value()), ln=1)
-        pdf.cell(txt='   Melee: ' + str(self.meleeSkill.value()), ln=1)
-        pdf.cell(txt='   Ranged: ' + str(self.rangedSkill.value()), ln=1)
-        pdf.cell(txt='Psionic Skills', ln=1)
-        pdf.cell(txt='   Clairvoyance: ' + str(self.clairvoyanceSkill.value()), ln=1)
-        pdf.cell(txt='   Psychokinesis: ' + str(self.psychokinesisSkill.value()), ln=1)
-        pdf.cell(txt='   Telepathy: ' + str(self.telepathySkill.value()), ln=1)
+        pdf.cell(txt=' ')
+        pdf.ln()
+        pdf.cell(txt=' ')
+        pdf.ln()
+        pdf.cell(txt='Combat Skills')
+        pdf.ln()
+        pdf.cell(txt='   Boxing: ' + str(self.boxingSkill.value()))
+        pdf.ln()
+        pdf.cell(txt='   Melee: ' + str(self.meleeSkill.value()))
+        pdf.ln()
+        pdf.cell(txt='   Ranged: ' + str(self.rangedSkill.value()))
+        pdf.ln()
+        pdf.cell(txt='Psionic Skills')
+        pdf.ln()
+        pdf.cell(txt='   Clairvoyance: ' + str(self.clairvoyanceSkill.value()))
+        pdf.ln()
+        pdf.cell(txt='   Psychokinesis: ' + str(self.psychokinesisSkill.value()))
+        pdf.ln()
+        pdf.cell(txt='   Telepathy: ' + str(self.telepathySkill.value()))
+        pdf.ln()
         pdf.set_font('Comic Sans MS', '', 18)
-        pdf.cell(txt=' ', ln=1)
-        pdf.cell(txt=' ', ln=1)
-        pdf.cell(txt='ARMOR:', ln=1)
+        pdf.cell(txt=' ')
+        pdf.ln()
+        pdf.cell(txt=' ')
+        pdf.ln()
+        pdf.cell(txt='ARMOR:')
+        pdf.ln()
         pdf.set_font('Comic Sans MS', '', 14)
-        pdf.cell(txt=self.armorDisplay.toPlainText(), ln=1)
+        pdf.cell(txt=self.armorDisplay.toPlainText())
+        pdf.ln()
         pdf.set_font('Comic Sans MS', '', 18)
-        pdf.cell(txt=' ', ln=1)
-        pdf.cell(txt='WEAPON:', ln=1)
+        pdf.cell(txt=' ')
+        pdf.ln()
+        pdf.cell(txt='WEAPON:')
+        pdf.ln()
         pdf.set_font('Comic Sans MS', '', 14)
-        pdf.cell(txt=self.weaponDisplay.toPlainText(), ln=1)
+        pdf.cell(txt=self.weaponDisplay.toPlainText())
+        pdf.ln()
         pdf.set_font('Comic Sans MS', '', 18)
-        pdf.cell(txt=' ', ln=1)
-        pdf.cell(txt='ITEMS:', ln=1)
+        pdf.cell(txt=' ')
+        pdf.ln()
+        pdf.cell(txt='ITEMS:')
+        pdf.ln()
         pdf.set_font('Comic Sans MS', '', 14)
         some_text = self.itemsDisplay.toPlainText()
         some_text = some_text.split()
@@ -2318,21 +2373,28 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             if len(some_text) > 12:
                 for i in range(12):
                     some_words += some_text[i] + ' '
-                pdf.cell(txt=some_words, ln=1)
+                pdf.cell(txt=some_words)
+                pdf.ln()
                 some_text = some_text[12:]
             else:
                 for i in range(len(some_text)):
                     some_words += some_text[i] + ' '
-                pdf.cell(txt=some_words, ln=1)
+                pdf.cell(txt=some_words)
+                pdf.ln()
                 some_text = ''
         pdf.set_font('Comic Sans MS', '', 18)
-        pdf.cell(txt=' ', ln=1)
-        pdf.cell(txt='SPECIAL:', ln=1)
+        pdf.cell(txt=' ')
+        pdf.ln()
+        pdf.cell(txt='SPECIAL:')
+        pdf.ln()
         pdf.set_font('Comic Sans MS', '', 14)
-        pdf.cell(txt=self.specialDisplay.toPlainText(), ln=1)
+        pdf.cell(txt=self.specialDisplay.toPlainText())
+        pdf.ln()
         pdf.set_font('Comic Sans MS', '', 18)
-        pdf.cell(txt=' ', ln=1)
-        pdf.cell(txt='PERSONALITY / APPEARANCE:', ln=1)
+        pdf.cell(txt=' ')
+        pdf.ln()
+        pdf.cell(txt='PERSONALITY / APPEARANCE:')
+        pdf.ln()
         pdf.set_font('Comic Sans MS', '', 14)
         some_text = self.traitsDisplay.toPlainText()
         some_text = some_text.split()
@@ -2341,16 +2403,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             if len(some_text) > 12:
                 for i in range(12):
                     some_words += some_text[i] + ' '
-                pdf.cell(txt=some_words, ln=1)
+                pdf.cell(txt=some_words)
+                pdf.ln()
                 some_text = some_text[12:]
             else:
                 for i in range(len(some_text)):
                     some_words += some_text[i] + ' '
-                pdf.cell(txt=some_words, ln=1)
+                pdf.cell(txt=some_words)
+                pdf.ln()
                 some_text = ''
         pdf.set_font('Comic Sans MS', '', 18)
-        pdf.cell(txt=' ', ln=1)
-        pdf.cell(txt='BACKSTORY:', ln=1)
+        pdf.cell(txt=' ')
+        pdf.ln()
+        pdf.cell(txt='BACKSTORY:')
+        pdf.ln()
         pdf.set_font('Comic Sans MS', '', 14)
         some_text = self.backstoryDisplay.toPlainText()
         some_text = some_text.split()
@@ -2359,16 +2425,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             if len(some_text) > 12:
                 for i in range(12):
                     some_words += some_text[i] + ' '
-                pdf.cell(txt=some_words, ln=1)
+                pdf.cell(txt=some_words)
+                pdf.ln()
                 some_text = some_text[12:]
             else:
                 for i in range(len(some_text)):
                     some_words += some_text[i] + ' '
-                pdf.cell(txt=some_words, ln=1)
+                pdf.cell(txt=some_words)
+                pdf.ln()
                 some_text = ''
         pdf.set_font('Comic Sans MS', '', 18)
-        pdf.cell(txt=' ', ln=1)
-        pdf.cell(txt='NOTES:', ln=1)
+        pdf.cell(txt=' ')
+        pdf.ln()
+        pdf.cell(txt='NOTES:')
+        pdf.ln()
         pdf.set_font('Comic Sans MS', '', 14)
         some_text = self.notesDisplay.toPlainText()
         some_text = some_text.split()
@@ -2377,12 +2447,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             if len(some_text) > 12:
                 for i in range(12):
                     some_words += some_text[i] + ' '
-                pdf.cell(txt=some_words, ln=1)
+                pdf.cell(txt=some_words)
+                pdf.ln()
                 some_text = some_text[12:]
             else:
                 for i in range(len(some_text)):
                     some_words += some_text[i] + ' '
-                pdf.cell(txt=some_words, ln=1)
+                pdf.cell(txt=some_words)
+                pdf.ln()
                 some_text = ''
 
         pdf.output(CURRENT_DIR + '/' + self.charnameEdit.text() + '.pdf')
@@ -2456,7 +2528,7 @@ if __name__ == '__main__':
 
     log.info(__app__ + ' started, and running...')
 
-    if trange[0] > 2022 or trange[1] > 5:
+    if trange[0] > 2022 or trange[1] > 12:
         __expired_tag__ = True
         __app__ += ' [EXPIRED]'
         
