@@ -2470,7 +2470,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         '''
         open an email letter to send as feedback to the author
         '''
-        os.startfile('mailto:shawndriscoll@hotmail.com?subject=Feedback: ' + __app__ + ' for Total Party Skills RPG')
+        os.startfile('mailto:shawndriscoll@hotmail.com?subject=Feedback: ' + __app__ + ' for Total Party System')
     
     def Overview_menu(self):
         '''
@@ -2528,7 +2528,7 @@ if __name__ == '__main__':
 
     log.info(__app__ + ' started, and running...')
 
-    if trange[0] > 2022 or trange[1] > 12:
+    if trange[0] > 2023 or trange[1] > 4:
         __expired_tag__ = True
         __app__ += ' [EXPIRED]'
         
