@@ -40,8 +40,7 @@ Requirements
 Not Using Python?
 -----------------
 
-You can always run the .EXE version for Windows 10 if you don't have the Python language installed. The .EXE version does not create PDFs
-at this time.
+You can always run the .EXE version for Windows 10 if you don't have the Python language installed.
 
 .. |ss| raw:: html
 
