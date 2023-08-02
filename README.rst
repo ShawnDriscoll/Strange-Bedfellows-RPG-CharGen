@@ -10,7 +10,7 @@
 Notes
 -----
 
-**Strange Bedfellows RPG Character Generator** is being developed using Python 3.11.0 and PyQt5.
+**Strange Bedfellows RPG Character Generator** is being developed using Python 3.11.4 and PyQt5.
 
 .. figure:: images/sb_chargen.png
 
@@ -22,16 +22,16 @@ Requirements
 
   It has not been tested in Windows 11.
 
-* **Python 3.11.0**
+* **Python 3.11.4**
    
   This code was written using the C implementation of Python
-  version 3.11.0. Also known as CPython.
+  version 3.11.4. Also known as CPython.
    
-* **PyQt5 5.15.7**
+* **PyQt5 5.15.9**
 
   PyQt5 is the framework used for displaying the Window GUI and buttons, etc.
 
-* **fpdf2 2.6.0**
+* **fpdf2 2.7.4**
 
   Fpdf2 is needed for printing the character sheets.
    
@@ -59,6 +59,7 @@ Things To-Do
 | Cheat codes.
 |ss|
 
+| Fix PDF charsheet creation for EXE version.
 | Fix psionic-checking when leveling up character.
 | Add/borrow psionics check for future use from We Want Soviet Men!
 | Move PDF character sheets closer to program folder.
@@ -68,6 +69,10 @@ Things To-Do
 |se|
 
 **Known History**
+
+* v0.1.4b
+
+  PDF charsheets can now be created in EXE version.
 
 * v0.1.3b
 
