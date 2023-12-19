@@ -1386,7 +1386,8 @@ class Ui_MainWindow(object):
         MainWindow.setTabOrder(self.bodyScore, self.mindScore)
         MainWindow.setTabOrder(self.mindScore, self.spiritScore)
         MainWindow.setTabOrder(self.spiritScore, self.additional1Display)
-        MainWindow.setTabOrder(self.additional1Display, self.agilitySkill)
+        MainWindow.setTabOrder(self.additional1Display, self.encumbered_checkBox)
+        MainWindow.setTabOrder(self.encumbered_checkBox, self.agilitySkill)
         MainWindow.setTabOrder(self.agilitySkill, self.beautySkill)
         MainWindow.setTabOrder(self.beautySkill, self.strengthSkill)
         MainWindow.setTabOrder(self.strengthSkill, self.knowledgeSkill)
@@ -1412,7 +1413,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "SB CharGen 0.1.5 (Beta)"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "SB CharGen 0.2.0 (Beta)"))
         self.attributeBox.setTitle(_translate("MainWindow", "Attribute Scores"))
         self.additionalLabel1c.setText(_translate("MainWindow", "Points"))
         self.additionalLabel1b.setText(_translate("MainWindow", "Attribute"))

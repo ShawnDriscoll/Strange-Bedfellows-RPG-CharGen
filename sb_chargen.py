@@ -4,7 +4,7 @@
 ############################################
 
 """
-SB Chargen 0.1.5 Beta
+SB Chargen 0.2.0 Beta
 -----------------------------------------------------------------------
 
 This program generates characters for the Strange Bedfellows episode of the Escape From Planet Matriarchy! RPG.
@@ -25,8 +25,7 @@ import json
 from fpdf import FPDF
 
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
-__app__ = 'SB CharGen 0.1.5 (Beta)'
-__version__ = '0.1.5b'
+__app__ = 'SB CharGen 0.2.0 (Beta)'
 __expired_tag__ = False
 
 class aboutDialog(QDialog, Ui_aboutDialog):
@@ -2007,7 +2006,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         '''
         self.filename = QFileDialog.getOpenFileName(self, 'Open TPS Character File', self.char_folder, 'TPS files (*' + self.file_extension + ')')
         if self.filename[0] != '':
-            #print(self.filename)
             log.info('Loading ' + self.filename[0])
             with open(self.filename[0], 'r') as json_file:
                 self.char_data = json.load(json_file)
@@ -2018,7 +2016,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.ageEdit.setText(self.char_data['Age'])
                 self.ageEdit.setDisabled(False)
                 self.genderEdit.setText(self.char_data['Gender'])
-                #self.genderEdit.setDisabled(False)
+                self.genderEdit.setDisabled(False)
                 self.dept_chosen = self.char_data['Dept']
                 self.deptBox.setCurrentIndex(self.dept_choice.index(self.dept_chosen))
                 self.rankDisplay.setText(self.char_data['Rank'])
@@ -2457,8 +2455,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 pdf.ln()
                 some_text = ''
 
-        pdf.output(CURRENT_DIR + '/' + self.charnameEdit.text() + '.pdf')
-        print('...to folder: ' + CURRENT_DIR + '/' + self.charnameEdit.text() + '.pdf')
+        pdf.output(CURRENT_DIR + '/Characters/' + self.charnameEdit.text() + '.pdf')
+        print('...to folder: ' + CURRENT_DIR + '/Characters/' + self.charnameEdit.text() + '.pdf')
         log.info('Character printed as ' + self.charnameEdit.text() + '.pdf')
 
     def Visit_Blog(self):
@@ -2524,6 +2522,9 @@ if __name__ == '__main__':
     if not os.path.exists('Logs'):
         os.mkdir('Logs')
     
+    if not os.path.exists('Characters'):
+        os.mkdir('Characters')
+    
     fh = logging.FileHandler('Logs/sb_chargen.log', 'w')
  
     formatter = logging.Formatter('%(asctime)s %(levelname)s %(name)s - %(message)s', datefmt = '%a, %d %b %Y %H:%M:%S')
@@ -2537,7 +2538,7 @@ if __name__ == '__main__':
 
     log.info(__app__ + ' started, and running...')
 
-    if trange[0] > 2023 or trange[1] > 11:
+    if trange[0] > 2024 or trange[1] > 12:
         __expired_tag__ = True
         __app__ += ' [EXPIRED]'
         
